@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>	
+
+		<title> Haven | Web Design</title>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="snowstorm.js"></script>
+
+		<link href="index.css" type="text/css" rel="stylesheet" />
+		<link href="menu.css" type="text/css" rel="stylesheet" />
+		<link href="scrollbutton.css" type="text/css" rel="stylesheet" />
+		<link href="settings.css" type="text/css" rel="stylesheet" />
+		<link href="contact.css" type="text/css" rel="stylesheet" />
+		<link href="footer.css" type="text/css" rel="stylesheet" />
+
+
+		<link rel="shortcut icon" href="cloverlogo.ico" />
+
+		<style >
+			.invert {
+				-webkit-filter: invert(1);
+				filter: invert(1);
+			}
+		</style>
+
+
+		<link href="https://fonts.googleapis.com/css?family=Bad+Script|Bungee+Hairline|Great+Vibes|Julius+Sans+One|Open+Sans:300,400" rel="stylesheet" />
+	
+		
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript"> 
+
+			//* Clickable Menu *//
+			$(document).ready(function(){
+
+				$(window).click(function() {
+					$("#myDropdown").animate({
+						height: "hide",
+						opacity: "hide"					
+					});
+				});
+
+				$('.dropbtn').click(function(event){
+					event.stopPropagation();
+				});
+
+				$(".dropbtn").click(function(){
+					$("#myDropdown").animate({
+						height: "toggle",
+						opacity: "toggle"					
+					});
+				});
+
+
+				//* End of Clickable Menu *//
+
+
+				//* Scroll Button *//
+
+				$(".scrolldownbutton button").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#aboutContainer").offset().top},
+											1700, 'easeInCubic' );
+				});
+
+
+				//* End of Scroll Button *//
+
+
+				//Settings
+
+				$('#settingsicon i').click(function(event){
+					event.stopPropagation();
+				});
+
+				$("#settingsicon i").click(function(){
+					$("#settingsContainer").animate({
+						height: "toggle",
+						opacity: "toggle"					
+					});
+					
+					$("#settingsicon i").toggleClass("running");
+					
+
+				});
+
+			});
+			//* Settings button 
+
+		</script>
+		<script src="ease.js" type="text/javascript"></script>
+		<script type="text/javascript">
+
+
+			function invert() { 
+				var css = 'html {-webkit-filter: invert(100%);' +
+					'-moz-filter: invert(100%);' + 
+					'-o-filter: invert(100%);' + 
+					'-ms-filter: invert(100%); }',
+
+					head = document.getElementsByTagName('head')[0],
+					style = document.createElement('style');
+
+
+				// a hack, so you can "invert back" clicking the bookmarklet again
+				if (!window.counter) { window.counter = 1;} else  { window.counter ++;
+																   if (window.counter % 2 == 0) { var css ='html {-webkit-filter: invert(0%); -moz-filter:    invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }'}
+																  };
+				style.type = 'text/css';
+				if (style.styleSheet){
+					style.styleSheet.cssText = css;
+				} else {
+					style.appendChild(document.createTextNode(css));
+				}
+
+				//injecting the css to the head
+				head.appendChild(style);
+			};
+		</script>
+		<script language="javascript" type="text/javascript">  
+			function changeDivImage() { 
+				var imgPath = new String(); 
+				imgPath = document.getElementById("mainpage").style.backgroundImage; 
+
+				if (imgPath == "url(mainBackground.jpg)" || imgPath == "") { 
+					document.getElementById("mainpage").style.backgroundImage = "url(background.jpg)"; 
+				} 
+				else { 
+					document.getElementById("mainpage").style.backgroundImage = "url(mainBackground.jpg)"; 
+
+				} 
+			} 
+
+
+		</script>  
+
+
+
+	</head>
+
+	<body>
+
+
+		<div id="mainpage">
+
+			<!-- Menu Code -->
+			<div class="menucontainer">
+				<img id="MenuImage" src="cloverlogo1.png" alt="Haven Logo" />
+				<div class="dropdown">
+					<button  class="dropbtn" >
+						<span id="dropbutton" class="fa fa-bars" ></span>
+
+					</button>		
+					<div class="dropdown-content" id="myDropdown">
+						<a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i>&#32;&#32;&#32;Home</a>
+						<a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i>&#32;&#32;&#32;Services</a>
+						<a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i>&#32;&#32;&#32;Code Snipets</a>
+						<a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i>&#32;&#32;&#32;Learn</a>
+						<a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i>&#32;&#32;&#32;Our Projects</a>
+						<a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i>&#32;&#32;&#32;Blog</a>
+						<a href="contact.html"><i class="fa fa-chevron-right" aria-hidden="true"></i> Contact</a>
+					</div>
+				</div> 
+			</div>
+			<!-- End Of Menu Code -->
+
+			<div id="titleContainer">
+				<h1>HAVEN</h1>
+				<h2>No templates, <span id="solidtext">No limits</span></h2>
+			</div>
+
+			<div class="scrolldownbutton bounce"><button><img src="arrowdown1.png" alt="arrow down"/></button></div> <!--<i class="fa fa-angle-double-down" aria-hidden="true"></i>-->
+
+			<!-- Fidget spinner<img class="fa-spin" src="data:image/jpeg;base64,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"/>
+-->		
+			<div id="settingsicon" ><i class="fa-2x fa fa-cog " aria-hidden="true"></i></div>
+			<div id="settingsContainer">
+
+				<h2>Settings</h2>
+
+				<p class="settingsText">Toggle Snowing</p>
+				<div class="slider">
+					<input onclick="snowStorm.toggleSnow()" type="checkbox" value="None" id="slider" name="check" />
+					<label for="slider"></label>
+				</div>
+
+				<p class="settingsText">Invert Colors</p>	
+				<div class="slider"> <!-- class="invert" ... didnt look right so i changed it-->		
+					<input onclick="invert()" id='invert'  type="checkbox" value="None" name="check"  />
+					<label for="invert"></label>
+				</div>
+
+				<p class="settingsText">Party Theme</p>
+				<div id="partytheme" class="slider">
+					<input  type="checkbox" value="None" id="slider" name="check" />
+				</div>
+
+				<!--<p class="settingsText">Change Image</p>
+<div class="slider">
+<input onclick="changeDivImage()" type="checkbox" value="None" id="backgroundimage" name="check" />
+<label for="backgroundimage"></label>
+</div>
+<br/>-->
+
+			</div>
+
+		</div>
+
+		<div id="iconContainer">
+
+			<div id="leftIcon">
+				<i class="fa fa-code " aria-hidden="true"></i>
+				<p> Clean Minimal Code </p>
+			</div>
+
+			<div id="middleIcon">
+				<i class="fa fa-paint-brush" aria-hidden="true"></i>
+				<p>Beautiful Design</p>
+			</div>
+
+			<div id="rightIcon">
+				<i class="fa fa-database" aria-hidden="true"></i>
+				<p>Modern</p>
+			</div>
+
+		</div>
+
+		<div id="aboutContainer">
+
+			<h2>About Us</h2>
+			<hr id="hrWhite">
+
+			<p> We are professional coders who design websites
+				and applications. We make websites and other prodcuts
+				happen, creating clean modern and user-friendly content. </p>
+
+		</div>
+
+		<div id="teamContainer">
+
+			<h2>Our Team</h2>
+			<hr id="hrBlack" />
+
+			<div id="dylanContainer">
+				<h2>Dylan</h2>
+				<h2 class="tag">Developer, Project Leader</h2>
+				<p> Dylan is a dedicated developer. He always trys new 
+					innotive ways to complete tasks. He </p> 
+				<div> <i class="fa fa-id-card-o" aria-hidden="true"></i><i class="fa teamicon fa-envelope" aria-hidden="true"></i><i class="fa teamicon fa-facebook-official" aria-hidden="true"></i></div>
+			</div>
+
+			<div id="mattContainer">
+				<h2>Matt</h2>
+				<h2 class="tag">Developer, Designer</h2>
+				<p>Matt is a developer, graphic and logo designer. He enjoys making modern art to support 
+					a websites looks. </p> 
+				<div> <i class="fa fa-id-card-o" aria-hidden="true"></i><i class="fa teamicon fa-envelope" aria-hidden="true"></i><i class="fa teamicon fa-facebook-official" aria-hidden="true"></i></div>
+			</div>
+
+		</div>
+
+		<div id="startContainer">
+
+			<h2>We create custom coded content suited to your personal needs.</h2>
+			<p id="startnow">Start Now</p>
+
+		</div>
+
+		<div id="servicesContainer">
+
+			<h2>Services</h2>
+			<hr id="hrBlack">
+			<table>
+				<tr>
+					<td>
+						<i class="fa fa-globe fa-4x" aria-hidden="true"></i>
+						<p>Website Construction</p>	
+					</td>
+					<td>
+						<i class="fa fa-television fa-4x" aria-hidden="true"></i>
+						<p>Website Design</p>
+					</td>
+					<td>
+						<i class="fa fa-users fa-4x" aria-hidden="true"></i>
+						<p>Web Consultation</p>
+					</td>
+					<td>
+						<i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
+						<p>Free Code Snipets</p>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="speciala">
+						<i class="fa fa-picture-o fa-4x" aria-hidden="true"></i>
+						<p>Image and Logo Design</p>
+					</td>
+					<td id="special">
+						<i class="fa fa-book fa-4x" aria-hidden="true"></i>
+						<p>Free Coding Classes</p>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+		<div id="blackbreakidek">
+			<h2 class="white">Purchase</h2>
+			<p class="white">Interested in what we make? Go to the services page and find what suits you, 
+				then fill out the purchase form. If you have any questions, don't hesitate
+				to contact us</p>
+		</div>
+		<div id="contact">
+			<h2>Contact Us</h2>
+			<div id="container">
+				<form id="form" method="POST" name="contactform" action="contact/contact-form-handler.php"> 
+
+					<label class="" for='name'><p id="description">Your Name:</p></label> 
+					<input id="yourname" type="text" name="name" placeholder="Name">
+					<br>
+					<label class="" for='email'><p id="description">Email Address:</p></label> 
+					<input id="yourname" class="full" type="text" name="email" placeholder="Email"> 
+
+					<br>
+					<label class="inputtitle" for='message'><p id="description">Message <i class="fa fa-envelope-open-o" aria-hidden="true"></i></p></label> <br>
+					<textarea class="fullarea" name="message"></textarea>
+
+
+					<div >
+						<input id="send" type="submit" value="Send"><br>
+					</div>
+
+				</form>
+
+				<script language="JavaScript">
+					// Code for validating the form
+					// Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
+					// for details
+					var frmvalidator  = new Validator("contactform");
+					frmvalidator.addValidation("name","req","Please provide your name"); 
+					frmvalidator.addValidation("email","req","Please provide your email"); 
+					frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+				</script>
+				<!--
+Sample code from:
+http://www.html-form-guide.com/contact-form/php-email-contact-form.html
+-->
+
+			</div>
+		</div>
+		<div class="footer">
+			<h2>Contact</h2>
+			<hr id="hrBlack">
+			<p><i class="fa fa-id-card-o" aria-hidden="true"></i><i class="fa uuu fa-envelope" aria-hidden="true"></i><i class="fa uuu fa-facebook-official" aria-hidden="true"></i></p>
+
+		</div>
+		<div class="footer-bottom">
+			<p>&copy; Haven Design - All Rights Reserved</p>
+		</div>
+
+		<script type="text/javascript" src="https://use.fontawesome.com/35a8e488fd.js"></script>
+	</body>
+
+</html>
